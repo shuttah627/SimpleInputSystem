@@ -2,6 +2,7 @@
 #include <thread>
 #include <conio.h>
 #include <vector>
+#include <iostream>
 
 struct Binding
 {
@@ -18,5 +19,6 @@ public:
 	void BindKey(char target, void(*function)());
 private:
 	std::vector<Binding> i_bindings;
+	std::thread* loop;
 };
 
