@@ -1,4 +1,4 @@
-#include "InputSystem.h"
+#include "../src/InputSystem.h"
 #include <iostream>
 
 int value;
@@ -28,6 +28,8 @@ int main()
 	inputs->BindKey('w', Inc);
 	inputs->BindKey('s', Dec);
 	inputs->BindKey('q', quitLoop);
+
+	std::cout << "Welcome to the increment and decrement example!" << std::endl << "Use 'w' and 'd' to increment and decrement a value! Press 'q' to quit program!" << std::endl;
 
 	while (isRunning)
 	{
