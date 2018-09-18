@@ -1,22 +1,33 @@
 #include "InputSystem.h"
 
-void MainLoop()
+void InputSystem::MainLoop()
 {
-	while (true)
+	while (runThread)
 	{
-		int x = _getch();
-		std::cout << "pressed " << x << std::endl;
+		char x = _getch();
+		//std::cout << "pressed " << x << std::endl;
+
+		for (Binding i : i_bindings)
+		{
+			if (i.b_target == x)
+			{
+				i.b_function();
+			}
+		}
 	}
 }
 
 InputSystem::InputSystem()
 {
-	loop = new std::thread(MainLoop);
+	loop = new std::thread(&InputSystem::MainLoop, this);
 }
+
 
 
 InputSystem::~InputSystem()
 {
+	//std::cout << "quitting";
+	loop->detach();
 	delete loop;
 }
 

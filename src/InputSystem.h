@@ -17,8 +17,11 @@ public:
 	~InputSystem();
 	
 	void BindKey(char target, void(*function)());
+	void MainLoop();
+
 private:
-	std::vector<Binding> i_bindings;
 	std::thread* loop;
+	std::vector<Binding> i_bindings;
+	bool runThread = true;
 };
 
