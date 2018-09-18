@@ -1,0 +1,11 @@
+# Standard gitignore
+
+# Ignore everything
+/*
+/*/
+
+# Git stuff
+!.gitignore
+
+# Other Stuff
+!/src/
