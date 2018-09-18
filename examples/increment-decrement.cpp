@@ -36,5 +36,6 @@ int main()
 		// Imagine the game loop here. This is just to keep the program running.
 	}
 
+	delete inputs;
 	return 1;
 }
